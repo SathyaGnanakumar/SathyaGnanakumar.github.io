@@ -255,8 +255,8 @@ p {
 }
 
 .profile-image {
-    width: 280px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #4299e1;
@@ -345,18 +345,19 @@ p {
 /* Enhanced About Me Section Styling */
 #about {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: #f0f8ff; /* Changed to match body background */
     position: relative;
 }
 
 #about::before {
+    /* Removed this block to remove the gradient overlay */
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(120deg, rgba(240, 244, 248, 0.9), rgba(237, 242, 247, 0.8));
+    /* Removed background-image */
 }
 
 #about .container {
@@ -365,7 +366,7 @@ p {
 }
 
 #about h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* This sets the size for About Me */
     margin-bottom: 30px;
     text-align: center;
     color: #2d3748;
@@ -465,10 +466,18 @@ p {
 }
 
 /* Projects Section */
+#projects h2, #resume h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Make it the same size as About Me header */
+    margin-bottom: 30px; /* Consistent margin with About Me header */
+    padding-bottom: 15px; /* Consistent padding with About Me header */
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 30px;
+    display: flex; /* Changed from grid to flex */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 30px; /* Use gap for spacing in flexbox */
 }
 
 .project-card {
@@ -477,6 +486,10 @@ p {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    min-width: 350px; /* Ensure cards maintain a minimum width */
+    flex-grow: 1; /* Allow cards to grow to fill space, but respect min-width */
+    max-width: calc(50% - 15px); /* Adjust max-width for two columns with gap on larger screens */
 }
 
 .project-card:hover {
@@ -515,6 +528,173 @@ p {
     font-size: 12px;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Blurry background */
+    align-items: center; /* Ensures vertical centering when display is flex */
+    justify-content: center; /* Ensures horizontal centering when display is flex */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    max-height: 90vh; /* Limit modal height */
+    overflow-y: auto; /* Enable scrolling within modal */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #2d3748;
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.project-image-modal-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-image-modal {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.modal-tag {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-highlights h3 {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #4299e1;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.project-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.project-highlights li {
+    background-color: #f0f4f8;
+    padding: 10px 15px;
+    border-left: 4px solid #4299e1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.modal-actions .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #3182ce;
+}
+
+.btn-secondary {
+    background-color: #cbd5e0;
+    color: #2d3748;
+    border: 1px solid #a0aec0;
+}
+
+.btn-secondary:hover {
+    background-color: #a0aec0;
+    color: white;
+}
+
+/* Prevent body scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
 }
 
 /* Resume Section */
@@ -806,6 +986,31 @@ p {
         font-size: 12px;
         padding: 0 10px;
     }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .project-highlights h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-highlights li {
+        font-size: 0.9rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -819,6 +1024,10 @@ p {
 
     .social-icons {
         gap: 15px;
+    }
+
+    .modal-content {
+        width: 95%;
     }
 }
 
