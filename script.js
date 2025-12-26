@@ -54,6 +54,58 @@ function toggleMobileMenu() {
 
 // Modal functionality (Add this to your script.js)
 const projectData = {
+    'route-vlm': {
+        title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
+        image: 'images/RouteVLM.png',
+        tags: [
+            'Python',
+            'LLM Routing',
+            'Vision-Language Models (VLMs)',
+            'Cost-Aware Inference',
+            'DistilBERT',
+            'Llama-3',
+            'Qwen-VL',
+            'Task Classification',
+            'MMCode',
+            'MathVista',
+            'MTVQA',
+            'TextVQA'
+        ],
+        highlights: [
+            'Designed a two-stage cost-aware routing system that dynamically assigns multimodal queries to either specialized small models or a large generalist VLM based on query difficulty and task type.',
+            'Implemented Stage 1 escalation using a win-prediction model (Llama-3-8B) to estimate when a strong generalist model is required, reserving expensive inference for complex reasoning queries.',
+            'Built a fast text-only task classifier using a fine-tuned DistilBERT model, achieving 99.5% accuracy and Macro F1 for routing queries to task-specific expert models.',
+            'Evaluated multimodal, in-context learning, and fine-tuned classification approaches, demonstrating that lightweight supervised routing outperforms VLM-based classifiers in both latency and accuracy.',
+            'Validated the system on multimodal benchmarks (MMCode, MathVista, MTVQA, TextVQA), maintaining performance comparable to a large VLM while offloading ~30% of queries to cheaper expert models.'
+        ],
+        link: 'https://github.com/SathyaGnanakumar/routevlm',
+        linkText: 'View Project'
+    },
+    'citation-retrieval': {
+        title: 'Citation Retrieval System',
+        image: 'images/citation.png',
+        tags: [
+            'Python',
+            'Multi-Agent Systems',
+            'Hybrid Retrieval',
+            'Dense Embeddings',
+            'LLM Reranking',
+            'DSPy Prompt Optimization',
+            'LangGraph',
+            'Retrieval-Augmented Generation (RAG)',
+            'Recall@K',
+            'MRR',
+        ],
+        highlights: [
+            'Designed a multi-agent citation retrieval pipeline that autonomously retrieves, aggregates, reranks, and selects scholarly references from manuscript excerpts using a closed-world formulation.',
+            'Implemented hybrid retrieval with parallel sparse (BM25) and dense (E5-Large, SPECTER-2) retrievers, fused via Reciprocal Rank Fusion (RRF) to combine lexical and semantic relevance.',
+            'Integrated LLM-based reranking and a DSPy-powered citation selector that enforces constrained candidate choice, reducing hallucinated or fabricated citations.',
+            'Built a self-improving retrieval loop with DSPy prompt optimization (BootstrapFewShot, MIPROv2), enabling continual improvement without retraining base models.',
+            'Evaluated on the ScholarCopilot benchmark, achieving Recall@10 of 19.7%, Recall@20 of 29.5%, and the highest MRR (11.4%) among compared baselines, outperforming individual retrievers at broader recall windows.'
+        ], 
+        link: 'https://github.com/SathyaGnanakumar/CitationRetrieval',   
+        linkText: 'View Project'
+    },
     'capitalone-hackathon': {
         title: 'Capital One Hackathon',
         image: 'images/Hackathon.png',
