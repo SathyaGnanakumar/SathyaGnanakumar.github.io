@@ -95,6 +95,14 @@ export const portfolioData = {
         image: '/images/UMDNext.png',
         imageAlt: 'UMD Next Project',
         tags: ['Figma', 'UI/UX Design', 'Prototyping', 'User Research', 'Wireframing']
+      },
+      {
+        id: 'remember-me',
+        title: 'Remember Me',
+        summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
+        image: '/images/remember-me.png',
+        imageAlt: 'Remember Me',
+        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'Hackathon']
       }
     ],
     modalData: {
@@ -277,6 +285,38 @@ export const portfolioData = {
         ],
         link: 'https://drive.google.com/file/d/1BvVj2DrFUZYJuaVjcYjg-lEPYl6SEgeO/view',
         linkText: 'View Presentation'
+      },
+      'remember-me': {
+        title: 'Remember Me',
+        image: '/images/remember-me.png',
+        description: '',
+        tags: [
+          'React Native',
+          'TypeScript',
+          'FastAPI',
+          'Python',
+          'Supabase',
+          'PostgreSQL',
+          'pgvector',
+          'InsightFace',
+          'Facial Recognition',
+          'ElevenLabs',
+          'OpenAI',
+          'Gemini',
+          'Vector Embeddings',
+          'Speaker Diarization',
+          'HenHacks 2026'
+        ],
+        highlights: [
+          "Won the 'Automation Systems & Public Infrastructure' award at HenHacks 2026, sponsored by Bentley.",
+          "Built a caregiver-guided mobile app for Alzheimer's patients to recognize familiar faces and recall past conversations using facial recognition and speaker-aware transcription.",
+          'Integrated InsightFace for real-time facial recognition linked to saved caregiver-managed profiles, enabling patients to identify people they encounter.',
+          'Implemented audio capture and speaker-labeled transcript generation using OpenAI and Gemini APIs, with vector-based retrieval via PostgreSQL pgvector for semantic search over past interactions.',
+          'Used ElevenLabs for personalized audio announcements, allowing the app to speak the name and relationship of recognized individuals to the patient.',
+          'Designed a dual-mode architecture: a caregiver dashboard for managing profiles and media, and a simplified patient-facing interface with local PIN verification.'
+        ],
+        link: 'https://devpost.com/software/remember-me-bt47ud',
+        linkText: 'View on Devpost'
       }
     }
   },
