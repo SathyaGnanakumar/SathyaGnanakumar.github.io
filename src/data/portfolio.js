@@ -41,6 +41,14 @@ export const portfolioData = {
     title: 'Projects',
     cards: [
       {
+        id: 'remember-me',
+        title: 'Remember Me',
+        summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
+        image: '/images/remember-me.png',
+        imageAlt: 'Remember Me',
+        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'Hackathon']
+      },
+      {
         id: 'route-vlm',
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
         summary: 'Introduced a two-stage cost-aware routing system for queries requiring multimodal LLMs.',
@@ -95,14 +103,6 @@ export const portfolioData = {
         image: '/images/UMDNext.png',
         imageAlt: 'UMD Next Project',
         tags: ['Figma', 'UI/UX Design', 'Prototyping', 'User Research', 'Wireframing']
-      },
-      {
-        id: 'remember-me',
-        title: 'Remember Me',
-        summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
-        image: '/images/remember-me.png',
-        imageAlt: 'Remember Me',
-        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'Hackathon']
       }
     ],
     modalData: {
