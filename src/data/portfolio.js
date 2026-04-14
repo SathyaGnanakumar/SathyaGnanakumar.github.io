@@ -41,6 +41,14 @@ export const portfolioData = {
     title: 'Projects',
     cards: [
       {
+        id: 'furrow',
+        title: 'Furrow',
+        summary: 'Built a voice-first farm assistant over iMessage and SMS for logging operations, checking compliance, and sending proactive daily briefings.',
+        image: '/images/furrow.png',
+        imageAlt: 'Furrow',
+        tags: ['FastAPI', 'React', 'PostgreSQL', 'OpenAI', 'Sendblue', 'Bitcamp 2026']
+      },
+      {
         id: 'remember-me',
         title: 'Remember Me',
         summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
@@ -106,6 +114,34 @@ export const portfolioData = {
       }
     ],
     modalData: {
+      furrow: {
+        title: 'Furrow',
+        image: '/images/furrow-arch.jpg',
+        description: '',
+        tags: [
+          'Python',
+          'FastAPI',
+          'React',
+          'PostgreSQL',
+          'SQLAlchemy',
+          'OpenAI',
+          'Groq Whisper',
+          'Gemini',
+          'Exa',
+          'Sendblue',
+          'Docker',
+          'Bitcamp 2026'
+        ],
+        highlights: [
+          'Built a voice-first farm operations assistant delivered over iMessage and SMS that converts messy voice notes, photos, and text messages into structured farm logs and conversational action items.',
+          'Implemented a three-tier routing system that uses fast-path chat handling for simple requests, specialist pipelines for tasks like vision and calendar actions, and a full agentic runtime for complex multi-step workflows.',
+          'Added chemical safety compliance checks for REI and PHI constraints, helping farmers log applications and immediately receive reminder-ready follow-up actions.',
+          'Developed proactive daily briefings that aggregate weather impact, commodity price movement, budget burn, soil sensor signals, and recommended next actions into concise farmer updates.',
+          'Integrated real-time research and external tools across Exa, Sendblue, Gmail, Google Calendar, and multimodal LLM providers to support market research, communication, and farm operations automation.'
+        ],
+        link: 'https://devpost.com/software/furrow',
+        linkText: 'View on Devpost'
+      },
       'route-vlm': {
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
         image: '/images/RouteVLM.png',

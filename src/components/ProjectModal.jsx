@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ projectId, project, onClose }) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === 'Escape') {
@@ -19,10 +19,12 @@ const ProjectModal = ({ project, onClose }) => {
 
   if (!project) return null;
 
+  const isFurrow = projectId === 'furrow';
+
   return (
     <div className="modal" role="dialog" aria-modal="true">
       <div className="modal-overlay" onClick={onClose} />
-      <div className="modal-content glass">
+      <div className={`modal-content glass${isFurrow ? ' modal-content-wide' : ''}`}>
         <div className="modal-header">
           <h2>{project.title}</h2>
           <button className="close-button" onClick={onClose} aria-label="Close">
@@ -30,7 +32,7 @@ const ProjectModal = ({ project, onClose }) => {
           </button>
         </div>
         <div className="modal-body">
-          <div className="modal-image">
+          <div className={`modal-image${isFurrow ? ' modal-image-wide' : ''}`}>
             <img src={project.image} alt={project.title} />
           </div>
           {project.description ? (

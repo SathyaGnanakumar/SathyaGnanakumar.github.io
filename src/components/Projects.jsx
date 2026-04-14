@@ -52,6 +52,7 @@ const Projects = ({ data }) => {
       </div>
       {activeProject ? (
         <ProjectModal
+          projectId={activeProjectId}
           project={activeProject}
           onClose={() => setActiveProjectId(null)}
         />
