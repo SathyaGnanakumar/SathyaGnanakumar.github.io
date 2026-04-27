@@ -19,12 +19,12 @@ const ProjectModal = ({ projectId, project, onClose }) => {
 
   if (!project) return null;
 
-  const isFurrow = projectId === 'furrow';
+  const isWideProject = projectId === 'furrow' || projectId === 'shellmate';
 
   return (
     <div className="modal" role="dialog" aria-modal="true">
       <div className="modal-overlay" onClick={onClose} />
-      <div className={`modal-content glass${isFurrow ? ' modal-content-wide' : ''}`}>
+      <div className={`modal-content glass${isWideProject ? ' modal-content-wide' : ''}`}>
         <div className="modal-header">
           <h2>{project.title}</h2>
           <button className="close-button" onClick={onClose} aria-label="Close">
@@ -32,7 +32,7 @@ const ProjectModal = ({ projectId, project, onClose }) => {
           </button>
         </div>
         <div className="modal-body">
-          <div className={`modal-image${isFurrow ? ' modal-image-wide' : ''}`}>
+          <div className={`modal-image${isWideProject ? ' modal-image-wide' : ''}`}>
             <img src={project.image} alt={project.title} />
           </div>
           {project.description ? (
