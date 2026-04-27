@@ -31,8 +31,10 @@ export const portfolioData = {
       'TensorFlow',
       'Machine Learning',
       'NLP',
+      'Databases',
       'AWS',
       'LLMs',
+      'Multi-Agent Systems',
       'Multimodal Models',
       'SQL'
     ]
@@ -40,6 +42,14 @@ export const portfolioData = {
   projects: {
     title: 'Projects',
     cards: [
+      {
+        id: 'shellmate',
+        title: 'Shellmate',
+        summary: 'Built a messaging-first campus assistant that helps UMD students find the right campus support through one simple text.',
+        image: '/images/shellmate.png',
+        imageAlt: 'Shellmate',
+        tags: ['FastAPI', 'Python', 'OpenAI Agents SDK', 'SQLite', 'Exa', 'Claude Hackathon']
+      },
       {
         id: 'furrow',
         title: 'Furrow',
@@ -54,7 +64,7 @@ export const portfolioData = {
         summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
         image: '/images/remember-me.png',
         imageAlt: 'Remember Me',
-        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'Hackathon']
+        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'HenHacks 2026']
       },
       {
         id: 'route-vlm',
@@ -352,6 +362,33 @@ export const portfolioData = {
           'Designed a dual-mode architecture: a caregiver dashboard for managing profiles and media, and a simplified patient-facing interface with local PIN verification.'
         ],
         link: 'https://devpost.com/software/remember-me-bt47ud',
+        linkText: 'View on Devpost'
+      },
+      shellmate: {
+        title: 'Shellmate',
+        image: '/images/shellmate-detail.jpg',
+        description: '',
+        tags: [
+          'Python',
+          'FastAPI',
+          'OpenAI Agents SDK',
+          'SQLite',
+          'Sendblue',
+          'Exa',
+          'Firecrawl',
+          'Campus Resource Discovery',
+          'iMessage/SMS',
+          'Anthropic x Maryland Hackathon'
+        ],
+        highlights: [
+          'Placed 2nd at the Anthropic x Maryland Hackathon out of roughly 400 participating students.',
+          'Built a messaging-first campus assistant for UMD students that delivers clear next steps, relevant resources, and practical guidance directly over iMessage or SMS.',
+          'Implemented a FastAPI backend with Sendblue webhook handling, user context and memory management, and a debug chat endpoint for local testing.',
+          'Used the OpenAI Agents SDK to route student requests between a primary chat agent and a scraper agent for deeper research when campus questions required live information lookup.',
+          'Created a source-backed campus knowledge layer with local UMD resource files, SQLite-backed conversation history, and live scraping tools powered by Exa and Firecrawl.',
+          'Shipped the project for the Anthropic x Maryland Hackathon with a focus on reducing the hidden-curriculum gap for students who need help finding tutoring, scholarships, advising, and career resources.'
+        ],
+        link: 'https://devpost.com/software/shellmate-pb5of9',
         linkText: 'View on Devpost'
       }
     }
