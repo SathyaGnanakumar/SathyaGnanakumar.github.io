@@ -67,6 +67,14 @@ export const portfolioData = {
         tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'HenHacks 2026']
       },
       {
+        id: 'areal-cispo',
+        title: 'Comparing Algorithms in Asynchronous RL',
+        summary: 'Compared GRPO, CISPO, SAPO, and M2PO inside AReaL to study which RL objective remains most stable as asynchronous training introduces stale rollout data.',
+        image: '/images/areal-cispo-card.svg',
+        imageAlt: 'Comparing Algorithms in Asynchronous RL',
+        tags: ['Python', 'PyTorch', 'Asynchronous RL', 'AReaL', 'CISPO', 'Open Source']
+      },
+      {
         id: 'route-vlm',
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
         summary: 'Introduced a two-stage cost-aware routing system for queries requiring multimodal LLMs.',
@@ -151,6 +159,30 @@ export const portfolioData = {
         ],
         link: 'https://devpost.com/software/furrow',
         linkText: 'View on Devpost'
+      },
+      'areal-cispo': {
+        title: 'Comparing Algorithms in Asynchronous RL',
+        image: '/images/areal-cispo-modal.svg',
+        description: 'Built on AReaL, a fully asynchronous RL system for LLMs with explicit staleness control, this project compares GRPO, CISPO, SAPO, and M2PO under stale-policy training. The results show CISPO is the strongest choice at high staleness, while M2PO stays consistently reliable and SAPO becomes brittle when stale gradients get too extreme.',
+        tags: [
+          'Python',
+          'PyTorch',
+          'AReaL',
+          'Asynchronous RL',
+          'PPO',
+          'CISPO',
+          'Open Source',
+          'Algorithm Research'
+        ],
+        highlights: [
+          'Implemented the CISPO loss from MiniMax-M1 inside AReaL and integrated it into the PPO actor path so it could be compared directly against GRPO, SAPO, and M2PO under controlled staleness.',
+          'Ran the experiments on the Zaratan HPC cluster with 2×A100 GPUs using Qwen2.5-1.5B-Instruct on GSM8K math reasoning.',
+          'Used AReaL’s asynchronous rollout and training setup to frame the core question: how should algorithm choice change when rollout workers and learner updates are decoupled and policy data becomes stale?',
+          'Ran comparisons across staleness levels n=0, n=2, and n=4, where CISPO led at extreme staleness with 89.84% final reward, ahead of M2PO at 85.94% and GRPO at 82.81%.',
+          'Validated the algorithm behavior seen in the plots: CISPO handled stale gradients conservatively, M2PO stayed the most consistent overall, and SAPO collapsed at n=4 after peaking at n=2.'
+        ],
+        link: 'https://github.com/SathyaGnanakumar/AReaL/tree/feature/cispo-algorithm',
+        linkText: 'View GitHub'
       },
       'route-vlm': {
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
