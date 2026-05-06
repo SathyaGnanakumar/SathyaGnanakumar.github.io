@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">AReaL CISPO performance analysis</title>
+  <desc id="desc">A presentation-style slide with a heatmap and line chart comparing GRPO, CISPO, SAPO, and M2PO across staleness levels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#0f1f33"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#edf4fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="58" y="56" width="1084" height="688" rx="26" fill="#f7fafc"/>
+  <rect x="58" y="56" width="1084" height="134" rx="26" fill="#121a2d"/>
+  <rect x="58" y="154" width="1084" height="36" fill="#121a2d"/>
+  <text x="108" y="136" fill="#f8fafc" font-size="48" font-family="Arial, Helvetica, sans-serif" font-weight="700">Performance Analysis Plots</text>
+  <rect x="108" y="154" width="72" height="8" rx="4" fill="#4fb7ff"/>
+
+  <rect x="114" y="220" width="396" height="454" rx="18" fill="url(#card)" stroke="#cfdceb"/>
+  <text x="312" y="278" text-anchor="middle" fill="#18212f" font-size="30" font-family="Arial, Helvetica, sans-serif" font-weight="700">Final Reward Heatmap</text>
+  <text x="144" y="370" fill="#4b5a70" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">GRPO</text>
+  <text x="144" y="458" fill="#4b5a70" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">CISPO</text>
+  <text x="144" y="546" fill="#4b5a70" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">SAPO</text>
+  <text x="144" y="634" fill="#4b5a70" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">M2PO</text>
+  <text x="244" y="696" fill="#4b5a70" font-size="22" font-family="Arial, Helvetica, sans-serif">n=0</text>
+  <text x="330" y="696" fill="#4b5a70" font-size="22" font-family="Arial, Helvetica, sans-serif">n=2</text>
+  <text x="416" y="696" fill="#4b5a70" font-size="22" font-family="Arial, Helvetica, sans-serif">n=4</text>
+
+  <rect x="222" y="322" width="86" height="86" fill="#98cc6b"/>
+  <rect x="308" y="322" width="86" height="86" fill="#d7ea7e"/>
+  <rect x="394" y="322" width="86" height="86" fill="#edf2a0"/>
+  <rect x="222" y="410" width="86" height="86" fill="#5baa62"/>
+  <rect x="308" y="410" width="86" height="86" fill="#a9d56f"/>
+  <rect x="394" y="410" width="86" height="86" fill="#86bf69"/>
+  <rect x="222" y="498" width="86" height="86" fill="#bddc74"/>
+  <rect x="308" y="498" width="86" height="86" fill="#52a15f"/>
+  <rect x="394" y="498" width="86" height="86" fill="#962238"/>
+  <rect x="222" y="586" width="86" height="86" fill="#7fbc68"/>
+  <rect x="308" y="586" width="86" height="86" fill="#85be6a"/>
+  <rect x="394" y="586" width="86" height="86" fill="#bddc74"/>
+
+  <g fill="#0c1525" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="265" y="374">0.8828</text>
+    <text x="351" y="374">0.8359</text>
+    <text x="437" y="374">0.8281</text>
+    <text x="265" y="462">0.9141</text>
+    <text x="351" y="462">0.8750</text>
+    <text x="437" y="462">0.8984</text>
+    <text x="265" y="550">0.8594</text>
+    <text x="351" y="550">0.9219</text>
+    <text x="437" y="550" fill="#f8fafc">0.0391</text>
+    <text x="265" y="638">0.9062</text>
+    <text x="351" y="638">0.8984</text>
+    <text x="437" y="638">0.8594</text>
+  </g>
+
+  <rect x="536" y="220" width="546" height="454" rx="18" fill="url(#card)" stroke="#cfdceb"/>
+  <text x="809" y="278" text-anchor="middle" fill="#18212f" font-size="30" font-family="Arial, Helvetica, sans-serif" font-weight="700">Effect of Staleness on Final Reward</text>
+  <line x1="612" y1="618" x2="1022" y2="618" stroke="#8ca2bd" stroke-width="2"/>
+  <line x1="612" y1="320" x2="612" y2="618" stroke="#8ca2bd" stroke-width="2"/>
+  <g stroke="#d7e1ef" stroke-width="1">
+    <line x1="612" y1="544" x2="1022" y2="544"/>
+    <line x1="612" y1="470" x2="1022" y2="470"/>
+    <line x1="612" y1="396" x2="1022" y2="396"/>
+  </g>
+  <g fill="#5b6b80" font-size="18" font-family="Arial, Helvetica, sans-serif">
+    <text x="632" y="646">n=0</text>
+    <text x="798" y="646">n=2</text>
+    <text x="966" y="646">n=4</text>
+    <text x="572" y="622">0.80</text>
+    <text x="572" y="548">0.85</text>
+    <text x="572" y="474">0.90</text>
+    <text x="572" y="400">0.95</text>
+  </g>
+
+  <polyline fill="none" stroke="#4a90f3" stroke-width="6" points="652,488 816,558 980,572"/>
+  <polyline fill="none" stroke="#f06a34" stroke-width="6" points="652,446 816,492 980,462"/>
+  <polyline fill="none" stroke="#57b26b" stroke-width="6" points="652,514 816,432 980,760"/>
+  <polyline fill="none" stroke="#8a45c5" stroke-width="6" points="652,456 816,470 980,514"/>
+  <g>
+    <circle cx="652" cy="488" r="8" fill="#4a90f3"/>
+    <circle cx="816" cy="558" r="8" fill="#4a90f3"/>
+    <circle cx="980" cy="572" r="8" fill="#4a90f3"/>
+    <circle cx="652" cy="446" r="8" fill="#f06a34"/>
+    <circle cx="816" cy="492" r="8" fill="#f06a34"/>
+    <circle cx="980" cy="462" r="8" fill="#f06a34"/>
+    <circle cx="652" cy="514" r="8" fill="#57b26b"/>
+    <circle cx="816" cy="432" r="8" fill="#57b26b"/>
+    <circle cx="980" cy="760" r="8" fill="#57b26b"/>
+    <circle cx="652" cy="456" r="8" fill="#8a45c5"/>
+    <circle cx="816" cy="470" r="8" fill="#8a45c5"/>
+    <circle cx="980" cy="514" r="8" fill="#8a45c5"/>
+  </g>
+  <g fill="#18212f" font-size="20" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="884" y="330">Legend</text>
+    <rect x="884" y="346" width="18" height="18" fill="#4a90f3"/><text x="912" y="361">GRPO</text>
+    <rect x="884" y="378" width="18" height="18" fill="#f06a34"/><text x="912" y="393">CISPO</text>
+    <rect x="884" y="410" width="18" height="18" fill="#57b26b"/><text x="912" y="425">SAPO</text>
+    <rect x="884" y="442" width="18" height="18" fill="#8a45c5"/><text x="912" y="457">M2PO</text>
+  </g>
+
+  <rect x="114" y="694" width="968" height="30" rx="15" fill="#eaf2fb"/>
+  <text x="598" y="716" text-anchor="middle" fill="#23324a" font-size="20" font-family="Arial, Helvetica, sans-serif" font-weight="700">Key result: CISPO remains strongest at high staleness while SAPO becomes brittle.</text>
+</svg>

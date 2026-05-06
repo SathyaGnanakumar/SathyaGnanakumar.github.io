@@ -19,7 +19,7 @@ const ProjectModal = ({ projectId, project, onClose }) => {
 
   if (!project) return null;
 
-  const isWideProject = projectId === 'furrow' || projectId === 'shellmate';
+  const isWideProject = projectId === 'furrow' || projectId === 'shellmate' || projectId === 'areal-cispo';
 
   return (
     <div className="modal" role="dialog" aria-modal="true">
