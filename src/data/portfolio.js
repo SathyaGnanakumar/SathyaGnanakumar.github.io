@@ -67,6 +67,14 @@ export const portfolioData = {
         tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'HenHacks 2026']
       },
       {
+        id: 'iceberg-occ',
+        title: 'Evaluating Iceberg-Style OCC for OLTP Workloads',
+        summary: 'Benchmarked an Iceberg-inspired concurrency-control design against 2PL, OCC, and MVCC, showing about 84k TPS on a high-contention 80R/20W mixed workload but 55 to 75 percent retries on write-heavy contention.',
+        image: '/images/cmsc624-paper-results.png',
+        imageAlt: 'CMSC624 final project results graphs',
+        tags: ['Database Systems', 'Apache Iceberg', 'OCC', 'MVCC', 'OLTP', 'Research']
+      },
+      {
         id: 'areal-cispo',
         title: 'Comparing Algorithms in Asynchronous RL',
         summary: 'Compared GRPO, CISPO, SAPO, and M2PO inside AReaL to study which RL objective remains most stable as asynchronous training introduces stale rollout data.',
@@ -341,6 +349,32 @@ export const portfolioData = {
         ],
         link: 'https://320project.github.io',
         linkText: 'View Project'
+      },
+      'iceberg-occ': {
+        title: 'Evaluating Iceberg-Style OCC for OLTP Workloads',
+        image: '/images/cmsc624-paper-cover.png',
+        description: 'For my CMSC624 final project, I co-authored and implemented an Iceberg-inspired concurrency-control scheme inside an in-memory transactional key-value store, then compared it directly against Conservative 2PL, Parallel OCC, and PostgreSQL-style MVCC. The paper shows that Iceberg-style OCC matched 2PL and OCC on read-only workloads, reached nearly 84,000 TPS on the 80R/20W high-contention mixed workload at 0.1ms transactions versus roughly 15,000 TPS for MVCC, but also suffered 55 to 75 percent retry rates on high-contention write-heavy workloads because conflicts are resolved at commit time.',
+        tags: [
+          'Database Systems',
+          'Apache Iceberg',
+          'Optimistic Concurrency Control (OCC)',
+          'Multi-Version Concurrency Control (MVCC)',
+          'Two-Phase Locking (2PL)',
+          'OLTP',
+          'OLAP',
+          'Lakehouse Architecture',
+          'Transactional Benchmarks',
+          'Research Paper'
+        ],
+        highlights: [
+          'Implemented an Iceberg-inspired architecture with immutable metadata snapshots, manifest files, and a CAS-based commit protocol inside an existing transactional in-memory database.',
+          'Benchmarked the design against Conservative 2PL, Parallel OCC, and PostgreSQL-style MVCC across low- and high-contention settings, multiple transaction durations, and read-only, write-heavy, and mixed workloads.',
+          'Found that Iceberg-style OCC was competitive on read-heavy workloads and dramatically outperformed MVCC on the high-contention 80R/20W mixed workload at 0.1ms, reaching about 84k TPS versus roughly 15k TPS for MVCC.',
+          'Observed the key downside of optimistic snapshot-based control under conflicting writes: retry rates stayed around 55 percent for 5-record writes and about 75 percent for 10-record writes in high-contention write-heavy workloads.',
+          'Identified a low-contention write-heavy bottleneck caused by rapidly growing overlapping manifests, motivating future work around compaction, coarser file grouping, and transactional latency measurement.'
+        ],
+        link: '/files/CMSC624_Final_Project.pdf',
+        linkText: 'Read Paper'
       },
       'umd-next': {
         title: 'UMD Next',
