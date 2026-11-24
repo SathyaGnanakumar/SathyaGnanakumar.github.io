@@ -31,8 +31,10 @@ export const portfolioData = {
       'TensorFlow',
       'Machine Learning',
       'NLP',
+      'Databases',
       'AWS',
       'LLMs',
+      'Multi-Agent Systems',
       'Multimodal Models',
       'SQL'
     ]
@@ -41,9 +43,17 @@ export const portfolioData = {
     title: 'Projects',
     cards: [
       {
+        id: 'shellmate',
+        title: 'Shellmate',
+        summary: 'Built a messaging-first campus assistant that helps UMD students find the right campus support through one simple text.',
+        image: '/images/shellmate.png',
+        imageAlt: 'Shellmate',
+        tags: ['FastAPI', 'Python', 'OpenAI Agents SDK', 'SQLite', 'Exa', 'Claude Hackathon']
+      },
+      {
         id: 'furrow',
         title: 'Furrow',
-        summary: 'Built a voice-first farm operations assistant over iMessage and SMS that turns voice notes, photos, and texts into structured logs, compliance checks, market research, and proactive daily briefings.',
+        summary: 'Built a voice-first farm assistant over iMessage and SMS for logging operations, checking compliance, and sending proactive daily briefings.',
         image: '/images/furrow.png',
         imageAlt: 'Furrow',
         tags: ['FastAPI', 'React', 'PostgreSQL', 'OpenAI', 'Sendblue', 'Bitcamp 2026']
@@ -54,7 +64,23 @@ export const portfolioData = {
         summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
         image: '/images/remember-me.png',
         imageAlt: 'Remember Me',
-        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'Hackathon']
+        tags: ['React Native', 'FastAPI', 'Python', 'Supabase', 'InsightFace', 'ElevenLabs', 'HenHacks 2026']
+      },
+      {
+        id: 'iceberg-occ',
+        title: 'Evaluating Iceberg-Style OCC for OLTP Workloads',
+        summary: 'Benchmarked an Iceberg-inspired concurrency-control design against 2PL, OCC, and MVCC, showing about 84k TPS on a high-contention 80R/20W mixed workload but 55 to 75 percent retries on write-heavy contention.',
+        image: '/images/cmsc624-paper-results.png',
+        imageAlt: 'CMSC624 final project results graphs',
+        tags: ['Database Systems', 'Apache Iceberg', 'OCC', 'MVCC', 'OLTP', 'Research']
+      },
+      {
+        id: 'areal-cispo',
+        title: 'Comparing Algorithms in Asynchronous RL',
+        summary: 'Implemented CISPO in AReaL and compared GRPO, CISPO, SAPO, and M2PO under stale rollouts, finding CISPO achieved the best final reward at high staleness while M2PO remained the smoothest overall.',
+        image: '/images/areal-cispo-card.svg',
+        imageAlt: 'Comparing Algorithms in Asynchronous RL',
+        tags: ['Python', 'PyTorch', 'Asynchronous RL', 'AReaL', 'CISPO', 'GSM8K']
       },
       {
         id: 'route-vlm',
@@ -116,7 +142,7 @@ export const portfolioData = {
     modalData: {
       furrow: {
         title: 'Furrow',
-        image: '/images/furrow.png',
+        image: '/images/furrow-arch.jpg',
         description: '',
         tags: [
           'Python',
@@ -141,6 +167,33 @@ export const portfolioData = {
         ],
         link: 'https://devpost.com/software/furrow',
         linkText: 'View on Devpost'
+      },
+      'areal-cispo': {
+        title: 'Comparing Algorithms in Asynchronous RL',
+        image: '/images/areal-cispo-modal.svg',
+        description: 'This project evaluates how reinforcement learning algorithms behave when asynchronous training introduces stale rollouts. We implemented CISPO inside AReaL and compared it against GRPO, SAPO, and M2PO across staleness levels η ∈ {0, 2, 4} on GSM8K using Qwen2.5-1.5B-Instruct on 2×A100 GPUs. The paper finds that CISPO achieves the highest final task reward at high staleness, reaching 0.8984 at η=4, while M2PO stays the smoothest across settings, GRPO degrades roughly linearly with staleness, and SAPO becomes unstable in the η=4 run.',
+        tags: [
+          'Python',
+          'PyTorch',
+          'AReaL',
+          'Asynchronous RL',
+          'CISPO',
+          'GRPO',
+          'SAPO',
+          'M2PO',
+          'GSM8K',
+          'Qwen2.5-1.5B',
+          'Algorithm Research'
+        ],
+        highlights: [
+          'Implemented CISPO inside the open-source AReaL framework, adding it to the loss registry and integrating it with the existing FSDP trainer and async rollout pipeline.',
+          'Benchmarked GRPO, CISPO, SAPO, and M2PO across 12 conditions spanning staleness levels η=0, 2, and 4 on GSM8K with Qwen2.5-1.5B-Instruct.',
+          'Showed that CISPO achieved the best high-staleness final reward, reaching 0.8984 at η=4 versus 0.8594 for M2PO and 0.8281 for GRPO.',
+          'Found that M2PO delivered the smoothest training behavior across staleness levels, while GRPO’s reward declined steadily as staleness increased.',
+          'Observed that SAPO became brittle in the high-staleness setting, collapsing in the η=4 run despite stronger behavior at lower staleness.'
+        ],
+        link: '/files/CMSC818Q_Final_Report.pdf',
+        linkText: 'View Paper'
       },
       'route-vlm': {
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
@@ -300,6 +353,32 @@ export const portfolioData = {
         link: 'https://320project.github.io',
         linkText: 'View Project'
       },
+      'iceberg-occ': {
+        title: 'Evaluating Iceberg-Style OCC for OLTP Workloads',
+        image: '/images/cmsc624-paper-cover.png',
+        description: 'For my CMSC624 final project, I co-authored and implemented an Iceberg-inspired concurrency-control scheme inside an in-memory transactional key-value store, then compared it directly against Conservative 2PL, Parallel OCC, and PostgreSQL-style MVCC. The paper shows that Iceberg-style OCC matched 2PL and OCC on read-only workloads, reached nearly 84,000 TPS on the 80R/20W high-contention mixed workload at 0.1ms transactions versus roughly 15,000 TPS for MVCC, but also suffered 55 to 75 percent retry rates on high-contention write-heavy workloads because conflicts are resolved at commit time.',
+        tags: [
+          'Database Systems',
+          'Apache Iceberg',
+          'Optimistic Concurrency Control (OCC)',
+          'Multi-Version Concurrency Control (MVCC)',
+          'Two-Phase Locking (2PL)',
+          'OLTP',
+          'OLAP',
+          'Lakehouse Architecture',
+          'Transactional Benchmarks',
+          'Research Paper'
+        ],
+        highlights: [
+          'Implemented an Iceberg-inspired architecture with immutable metadata snapshots, manifest files, and a CAS-based commit protocol inside an existing transactional in-memory database.',
+          'Benchmarked the design against Conservative 2PL, Parallel OCC, and PostgreSQL-style MVCC across low- and high-contention settings, multiple transaction durations, and read-only, write-heavy, and mixed workloads.',
+          'Found that Iceberg-style OCC was competitive on read-heavy workloads and dramatically outperformed MVCC on the high-contention 80R/20W mixed workload at 0.1ms, reaching about 84k TPS versus roughly 15k TPS for MVCC.',
+          'Observed the key downside of optimistic snapshot-based control under conflicting writes: retry rates stayed around 55 percent for 5-record writes and about 75 percent for 10-record writes in high-contention write-heavy workloads.',
+          'Identified a low-contention write-heavy bottleneck caused by rapidly growing overlapping manifests, motivating future work around compaction, coarser file grouping, and transactional latency measurement.'
+        ],
+        link: '/files/CMSC624_Final_Project.pdf',
+        linkText: 'Read Paper'
+      },
       'umd-next': {
         title: 'UMD Next',
         image: '/images/UMDNext.png',
@@ -352,6 +431,33 @@ export const portfolioData = {
           'Designed a dual-mode architecture: a caregiver dashboard for managing profiles and media, and a simplified patient-facing interface with local PIN verification.'
         ],
         link: 'https://devpost.com/software/remember-me-bt47ud',
+        linkText: 'View on Devpost'
+      },
+      shellmate: {
+        title: 'Shellmate',
+        image: '/images/shellmate-detail.jpg',
+        description: '',
+        tags: [
+          'Python',
+          'FastAPI',
+          'OpenAI Agents SDK',
+          'SQLite',
+          'Sendblue',
+          'Exa',
+          'Firecrawl',
+          'Campus Resource Discovery',
+          'iMessage/SMS',
+          'Anthropic x Maryland Hackathon'
+        ],
+        highlights: [
+          'Placed 2nd at the Anthropic x Maryland Hackathon out of roughly 400 participating students.',
+          'Built a messaging-first campus assistant for UMD students that delivers clear next steps, relevant resources, and practical guidance directly over iMessage or SMS.',
+          'Implemented a FastAPI backend with Sendblue webhook handling, user context and memory management, and a debug chat endpoint for local testing.',
+          'Used the OpenAI Agents SDK to route student requests between a primary chat agent and a scraper agent for deeper research when campus questions required live information lookup.',
+          'Created a source-backed campus knowledge layer with local UMD resource files, SQLite-backed conversation history, and live scraping tools powered by Exa and Firecrawl.',
+          'Shipped the project for the Anthropic x Maryland Hackathon with a focus on reducing the hidden-curriculum gap for students who need help finding tutoring, scholarships, advising, and career resources.'
+        ],
+        link: 'https://devpost.com/software/shellmate-pb5of9',
         linkText: 'View on Devpost'
       }
     }
