@@ -480,9 +480,11 @@ export const portfolioData = {
             { text: 'AWS Bedrock', highlight: true }
           ],
           [
-            { text: 'Developed ' },
-            { text: 'evaluation tooling', highlight: true },
-            { text: ' to compare model accuracy and track prompts and token usage' }
+            { text: 'Improved zero-shot harmonization accuracy by up to ' },
+            { text: '17.6 percentage points', highlight: true },
+            { text: ', reaching ' },
+            { text: '80.4% top-1 accuracy', highlight: true },
+            { text: ' across 51 evaluation cases' }
           ],
           [
             { text: 'Designed ' },
