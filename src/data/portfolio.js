@@ -41,6 +41,14 @@ export const portfolioData = {
     title: 'Projects',
     cards: [
       {
+        id: 'furrow',
+        title: 'Furrow',
+        summary: 'Built a voice-first farm operations assistant over iMessage and SMS that turns voice notes, photos, and texts into structured logs, compliance checks, market research, and proactive daily briefings.',
+        image: '/images/furrow.png',
+        imageAlt: 'Furrow',
+        tags: ['FastAPI', 'React', 'PostgreSQL', 'OpenAI', 'Sendblue', 'Bitcamp 2026']
+      },
+      {
         id: 'remember-me',
         title: 'Remember Me',
         summary: "An assistive memory companion app for Alzheimer's patients using facial recognition and speaker-aware transcription to help recognize familiar faces and recall conversations.",
@@ -106,6 +114,34 @@ export const portfolioData = {
       }
     ],
     modalData: {
+      furrow: {
+        title: 'Furrow',
+        image: '/images/furrow.png',
+        description: '',
+        tags: [
+          'Python',
+          'FastAPI',
+          'React',
+          'PostgreSQL',
+          'SQLAlchemy',
+          'OpenAI',
+          'Groq Whisper',
+          'Gemini',
+          'Exa',
+          'Sendblue',
+          'Docker',
+          'Bitcamp 2026'
+        ],
+        highlights: [
+          'Built a voice-first farm operations assistant delivered over iMessage and SMS that converts messy voice notes, photos, and text messages into structured farm logs and conversational action items.',
+          'Implemented a three-tier routing system that uses fast-path chat handling for simple requests, specialist pipelines for tasks like vision and calendar actions, and a full agentic runtime for complex multi-step workflows.',
+          'Added chemical safety compliance checks for REI and PHI constraints, helping farmers log applications and immediately receive reminder-ready follow-up actions.',
+          'Developed proactive daily briefings that aggregate weather impact, commodity price movement, budget burn, soil sensor signals, and recommended next actions into concise farmer updates.',
+          'Integrated real-time research and external tools across Exa, Sendblue, Gmail, Google Calendar, and multimodal LLM providers to support market research, communication, and farm operations automation.'
+        ],
+        link: 'https://devpost.com/software/furrow',
+        linkText: 'View on Devpost'
+      },
       'route-vlm': {
         title: 'RouteVLM: Cost-Aware Routing for Multimodal LLMs',
         image: '/images/RouteVLM.png',
@@ -323,6 +359,38 @@ export const portfolioData = {
   experience: {
     title: 'Work Experience',
     items: [
+      {
+        date: 'Jun 2026 - Aug 2026',
+        role: 'Software Engineer Intern',
+        logo: 'https://img.logo.dev/netrias.com?token=pk_I53NKKBqSnOQxFnDTePJCQ',
+        logoAlt: 'Netrias Logo',
+        bullets: [
+          [
+            { text: 'Built a reusable ' },
+            { text: 'Python package', highlight: true },
+            { text: ' for AI-powered data harmonization, integrating ' },
+            { text: 'OpenAI', highlight: true },
+            { text: ' and ' },
+            { text: 'AWS Bedrock', highlight: true },
+            { text: ' behind a shared provider interface' }
+          ],
+          [
+            { text: 'Developed ' },
+            { text: 'evaluation and audit tooling', highlight: true },
+            { text: ' to compare model accuracy, track prompt versions and token usage, and report ranking metrics' }
+          ],
+          [
+            { text: 'Designed typed ' },
+            { text: 'domain models and workflow contracts', highlight: true },
+            { text: ', and implemented a controller foundation for validating workflows and tracking execution state' }
+          ],
+          [
+            { text: 'Created ' },
+            { text: 'shared developer tools', highlight: true },
+            { text: ' and a synchronization workflow for repeatable repository onboarding, issue documentation, and PR readiness checks' }
+          ]
+        ]
+      },
       {
         date: 'Jun 2025 - Aug 2025',
         role: 'Software Engineer Intern',
