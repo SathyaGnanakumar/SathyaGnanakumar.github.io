@@ -578,11 +578,6 @@ export const portfolioData = {
             { text: ' and ' },
             { text: 'Windows Restart script', highlight: true },
             { text: ' that runs every week' }
-          ],
-          [
-            { text: 'Designed a ' },
-            { text: 'dashboard', highlight: true },
-            { text: ' that monitors Windows 11 pilot devices' }
           ]
         ]
       },
