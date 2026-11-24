@@ -474,26 +474,22 @@ export const portfolioData = {
           [
             { text: 'Built a reusable ' },
             { text: 'Python package', highlight: true },
-            { text: ' for AI-powered data harmonization, integrating ' },
+            { text: ' for data harmonization with ' },
             { text: 'OpenAI', highlight: true },
             { text: ' and ' },
-            { text: 'AWS Bedrock', highlight: true },
-            { text: ' behind a shared provider interface' }
+            { text: 'AWS Bedrock', highlight: true }
           ],
           [
             { text: 'Developed ' },
-            { text: 'evaluation and audit tooling', highlight: true },
-            { text: ' to compare model accuracy, track prompt versions and token usage, and report ranking metrics' }
+            { text: 'evaluation tooling', highlight: true },
+            { text: ' to compare model accuracy and track prompts and token usage' }
           ],
           [
-            { text: 'Designed typed ' },
-            { text: 'domain models and workflow contracts', highlight: true },
-            { text: ', and implemented a controller foundation for validating workflows and tracking execution state' }
-          ],
-          [
-            { text: 'Created ' },
-            { text: 'shared developer tools', highlight: true },
-            { text: ' and a synchronization workflow for repeatable repository onboarding, issue documentation, and PR readiness checks' }
+            { text: 'Designed ' },
+            { text: 'typed domain models', highlight: true },
+            { text: ' and a ' },
+            { text: 'workflow controller', highlight: true },
+            { text: ' for validation and run-state tracking' }
           ]
         ]
       },
